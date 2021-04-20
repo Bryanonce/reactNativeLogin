@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StackNavigator } from './StackNavigator';
 import { Menu } from '../screens/Menu';
-import { DrawerNavigatorType } from '../types/NavigationTypes';
+import { DrawerNavigatorType, LoginStackNavigatorType } from '../types/NavigationTypes';
+import { StackScreenProps } from '@react-navigation/stack';
 
 const Drawer = createDrawerNavigator<DrawerNavigatorType>();
 
-export const DrawerNavigator = () => {
+interface PropsStack extends StackScreenProps<LoginStackNavigatorType, 'DrawerNavigator'>{}
+
+export const DrawerNavigator = ({navigation}:PropsStack) => {
+    
+    useEffect(()=>{
+        navigation.setOptions({
+            headerShown: false,
+        })
+    },[])
+    
     return (
         <Drawer.Navigator initialRouteName="Main">
             <Drawer.Screen name="Main" component={StackNavigator} />
