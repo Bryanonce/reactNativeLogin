@@ -1,11 +1,11 @@
+import { StackScreenProps } from '@react-navigation/stack';
 import React, { useEffect, useState } from 'react';
-import { DrawerScreenProps } from '@react-navigation/drawer'
 import { Image, View } from 'react-native'
 import * as Progress from 'react-native-progress';
 import { globalScreen } from '../themes/GlobalStyles'
 import { LoginStackNavigatorType } from '../types/NavigationTypes'
 
-interface PropsDrawer extends DrawerScreenProps<LoginStackNavigatorType, 'Loading'>{}
+interface PropsDrawer extends StackScreenProps<LoginStackNavigatorType, 'Loading'>{}
 
 export const Loading = ({navigation}:PropsDrawer) => {
 
@@ -31,7 +31,7 @@ export const Loading = ({navigation}:PropsDrawer) => {
 
     return (
         <View
-            style={globalScreen.loading}
+            style={globalScreen.whiteCenter}
         >
             <Image 
                 style={globalScreen.imgLogo}
