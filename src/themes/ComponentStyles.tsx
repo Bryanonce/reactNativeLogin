@@ -3,9 +3,6 @@ import { StyleSheet } from "react-native";
 export const cardStyle = StyleSheet.create({
     linearGradient: {
       flex: 1,
-      paddingHorizontal: 10,
-      justifyContent: 'center',
-      alignItems: 'center',
     },
     loginCard: {
         borderWidth: 0.5,
@@ -29,10 +26,10 @@ export const cardStyle = StyleSheet.create({
         marginVertical: 10,
         padding: 15,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     textButtonLogin: {
         fontSize: 20,
-        color: '#E8EAF6'
+        color: '#E8EAF6',
     }
   })
