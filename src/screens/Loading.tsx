@@ -15,7 +15,7 @@ export const Loading = ({navigation}:PropsDrawer) => {
         const timer = (ms:number) => new Promise(res => setTimeout(res, ms))
         for(let i=1; i<=10; i++){
             setLoading((i*10)/100)
-            await timer(2000)
+            await timer(150)
         }
         navigation.navigate('Login');
     }

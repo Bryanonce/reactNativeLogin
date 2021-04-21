@@ -9,8 +9,8 @@ const Stack = createStackNavigator<StackNavigatorType>();
 export const StackNavigator = () => {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="DashBoard" component={DashBoard} />
-            <Stack.Screen name="Payment" component={Payment} />
+            <Stack.Screen name="DashBoard" options={{headerShown: false}} component={DashBoard} />
+            <Stack.Screen name="Payment" options={{headerShown: false}} component={Payment} />
         </Stack.Navigator>
     )
 }

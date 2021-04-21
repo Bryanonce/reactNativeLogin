@@ -1,6 +1,6 @@
 import { StackScreenProps } from '@react-navigation/stack'
 import React, { useEffect } from 'react'
-import { Image, Text, View } from 'react-native'
+import { Image, Text } from 'react-native'
 import { LoginStackNavigatorType } from '../types/NavigationTypes'
 import LinearGradient from 'react-native-linear-gradient';
 import { cardStyle } from '../themes/ComponentStyles';
@@ -15,13 +15,13 @@ interface UserDataTransfer{user:string, password:string}
 
 export const Login = ({navigation}:PropsStack) => {
 
-    const { control, handleSubmit, formState: { errors } } = useForm();
+    const { control, handleSubmit } = useForm();
     
     useEffect(()=>{
         navigation.setOptions({
             headerShown: false,
         })
-    });
+    }, []);
 
     const onSubmit = (data:UserDataTransfer)=>{
         const usuarios = UserDB();

@@ -11,5 +11,5 @@ export type DrawerNavigatorType  = {
 
 export type StackNavigatorType  = {
     DashBoard: undefined,
-    Payment: undefined
+    Payment: {cuentOrigen: string, cuentaBeneficiario: string, cantidad: number}
 }

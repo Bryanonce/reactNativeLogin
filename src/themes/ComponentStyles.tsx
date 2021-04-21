@@ -33,3 +33,20 @@ export const cardStyle = StyleSheet.create({
         color: '#E8EAF6',
     }
   })
+
+
+ export const uiKiten = StyleSheet.create({
+    container: {
+        marginVertical: 10,
+    },
+  });
+  
+
+ export const switchStyles = StyleSheet.create({
+    container: {
+      alignItems: "flex-start",
+      justifyContent: "center",
+      width: 600
+    }
+  });
+  

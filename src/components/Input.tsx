@@ -1,18 +1,18 @@
 import React from 'react'
 import { Control, Controller, DeepMap, FieldError, FieldValues } from 'react-hook-form';
-import { StyleProp, TextStyle } from 'react-native';
+import { KeyboardType, KeyboardTypeOptions, StyleProp, TextStyle } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
-import { cardStyle } from '../themes/ComponentStyles';
 
 interface PropsInput {
     name: string,
     control: Control<FieldValues>,
     password?: boolean,
-    style: StyleProp<TextStyle>
+    style: StyleProp<TextStyle>,
+    type?: KeyboardTypeOptions
 }
 
-export const Input = (
-    {name, control, password=false, style}:PropsInput)=>{
+export const BgInput = (
+    {name, control, password=false, style, type}:PropsInput)=>{
         
     return (
         <>
@@ -21,6 +21,7 @@ export const Input = (
                 render={({ field: { onChange, onBlur, value } }) => (
                     !password ?
                         <TextInput
+                            keyboardType={type? type: 'default' }
                             onBlur={onBlur}
                             onChangeText={value => onChange(value)}
                             value={value}

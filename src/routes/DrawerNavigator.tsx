@@ -19,8 +19,8 @@ export const DrawerNavigator = ({navigation}:PropsStack) => {
     
     return (
         <Drawer.Navigator initialRouteName="Main">
-            <Drawer.Screen name="Main" component={StackNavigator} />
-            <Drawer.Screen name="Menu" component={Menu} />
+            <Drawer.Screen name="Main" options={{headerShown: false}} component={StackNavigator} />
+            <Drawer.Screen name="Menu" options={{headerShown: false}} component={Menu} />
         </Drawer.Navigator>
     )
 }

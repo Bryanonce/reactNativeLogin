@@ -10,9 +10,9 @@ const Stack = createStackNavigator<LoginStackNavigatorType>();
 export const LoginStackNavigator = () => {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Loading" component={Loading} />
-            <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} />
+            <Stack.Screen name="Loading" options={{headerShown: false}} component={Loading} />
+            <Stack.Screen name="Login" options={{headerShown: false}} component={Login} />
+            <Stack.Screen name="DrawerNavigator" options={{headerShown: false}} component={DrawerNavigator} />
         </Stack.Navigator>
     )
 }
