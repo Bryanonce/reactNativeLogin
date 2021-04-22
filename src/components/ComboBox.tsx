@@ -23,22 +23,38 @@ export const ComboBox = ({name, control, style, comboData}:PropsSelect) => {
                 render={({ field: { onChange, onBlur, value } }) => (
                     <View
                         style={{
-                            justifyContent: 'center'
+                            justifyContent: 'center',
+
                         }}
                     >
                         <RNPickerSelect
                             onValueChange={(value) => onChange(value)}
                             useNativeAndroidPickerStyle={false}
-                            style={ style? style : {inputAndroid: {color: 'black', backgroundColor: '#fff', paddingHorizontal: 20} }}
+                            style={ style? style : {inputAndroid: {color: 'black', backgroundColor: '#ccc', paddingHorizontal: 10, marginVertical: 15, borderRadius: 10} }}
                             value={value}
                             items={comboData}
+
                         />
-                        <Image style={{
-                            position: 'absolute',
-                            right: 15,
-                            width: 15,
-                            height: 15,
-                        }} source={require('../resources/down.jpg')} />
+                        <View
+                            style={{
+                                position: 'absolute',
+                                right: 0,
+                                backgroundColor: '#fff',
+                                minWidth: 50,
+                                minHeight: 50,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                borderRadius: 10,
+                                borderWidth: 1,
+                                borderColor: '#ccc'
+                            }}
+                        >
+                            <Image style={{
+                                width: 15,
+                                height: 15,
+                            }} source={require('../resources/down.jpg')} />
+                        </View>
+                        
                     </View>
                 )}
                 name={name}

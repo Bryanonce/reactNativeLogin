@@ -1,6 +1,6 @@
 import { StackScreenProps } from '@react-navigation/stack'
 import React, { useEffect } from 'react'
-import { Image, Text } from 'react-native'
+import { Image, Text, View } from 'react-native'
 import { LoginStackNavigatorType } from '../types/NavigationTypes'
 import LinearGradient from 'react-native-linear-gradient';
 import { cardStyle } from '../themes/ComponentStyles';
@@ -33,13 +33,13 @@ export const Login = ({navigation}:PropsStack) => {
     };
 
     return (
-        <LinearGradient colors={['#C5CAE9', '#1A237E']} style={[cardStyle.linearGradient, {justifyContent: 'center', alignItems: 'center'}]}>
-            <LinearGradient colors={['#E8EAF6', '#9FA8DA']} style={cardStyle.loginCard} >
-                <Image style={[globalScreen.imgLogo, { alignSelf: 'center', top: -70 }]} source={require('../resources/logo.jpg')} />
+        <LinearGradient colors={['#DA0073', '#d695b7']} style={[cardStyle.linearGradient, {justifyContent: 'center', alignItems: 'center'}]}>
+            <View style={[cardStyle.loginCard, {backgroundColor: '#fff', borderRadius: 20}]}>
+                <Image style={[globalScreen.imgLogo, { alignSelf: 'center', top: -70, borderColor: '#fff', borderWidth: 3 }]} source={require('../resources/BGlogo.jpg')} />
                 <InputIcon
                     styles={{
                         container: globalScreen.inputContainer,
-                        input: cardStyle.loginInput,
+                        input: [cardStyle.loginInput,{borderWidth: 1, borderColor: '#DA0073', borderRadius: 50}],
                         icon: globalScreen.icons
                     }}
                     control={control}
@@ -49,7 +49,7 @@ export const Login = ({navigation}:PropsStack) => {
                 <InputIcon
                     styles={{
                         container: globalScreen.inputContainer,
-                        input: cardStyle.loginInput,
+                        input: [cardStyle.loginInput,{borderWidth: 1, borderColor: '#DA0073', borderRadius: 50}],
                         icon: globalScreen.icons
                     }}
                     control={control}
@@ -59,12 +59,15 @@ export const Login = ({navigation}:PropsStack) => {
                 />
 
                 <TouchableOpacity
-                    style={cardStyle.buttonLogin}
+                    style={[cardStyle.buttonLogin, { backgroundColor: '#DA0073', borderRadius: 50 }]}
                     onPress={handleSubmit(onSubmit)}
                 >
                     <Text style={cardStyle.textButtonLogin}>Ingresar</Text>
                 </TouchableOpacity>
-            </LinearGradient>
+            </View>
+            {/*<LinearGradient colors={['#E8EAF6', '#9FA8DA']} style={cardStyle.loginCard} >
+                
+                </LinearGradient>*/}
         </LinearGradient>
     )
 }

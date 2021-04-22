@@ -15,7 +15,7 @@ export const Loading = ({navigation}:PropsDrawer) => {
         const timer = (ms:number) => new Promise(res => setTimeout(res, ms))
         for(let i=1; i<=10; i++){
             setLoading((i*10)/100)
-            await timer(150)
+            await timer(500)
         }
         navigation.navigate('Login');
     }
@@ -31,13 +31,13 @@ export const Loading = ({navigation}:PropsDrawer) => {
 
     return (
         <View
-            style={globalScreen.whiteCenter}
+            style={[globalScreen.whiteCenter, {backgroundColor: '#DA0073'}]}
         >
             <Image 
                 style={globalScreen.imgLogo}
-                source={require('../resources/logo.jpg')}
+                source={require('../resources/BGlogo.jpg')}
             />
-            <Progress.Circle size={150} progress={loading} />
+            <Progress.Circle size={200} progress={loading} />
 
         </View>
     )

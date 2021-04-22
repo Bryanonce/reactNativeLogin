@@ -49,7 +49,6 @@ export const DashBoard = ({navigation}:PropsStack) => {
     const onSubmit = (data:DataCuentas)=>{
         //navigation.navigate('Menu');
         load(data);
-        
     };
 
     return (
@@ -59,13 +58,14 @@ export const DashBoard = ({navigation}:PropsStack) => {
                     flex: 1,
                     justifyContent: 'center',
                     alignItems: 'center',
+                    backgroundColor: '#fff',
                 }, isLoading ? { opacity: 0.2 } : null]}
             >
                 <View style={{ width: 300 }}>
 
                     <View
                         style={{
-                            marginVertical: 20,
+                            marginVertical: 30,
                         }}
                     >
                         <Text
@@ -73,8 +73,6 @@ export const DashBoard = ({navigation}:PropsStack) => {
                                 fontSize: 18,
                             }}
                         >Cuenta de Origen</Text>
-
-                        
 
                         <ComboBox
                             name="cuentOrigen"
@@ -113,7 +111,8 @@ export const DashBoard = ({navigation}:PropsStack) => {
                                 <BgInput
                                     control={control}
                                     name="cuentaBeneficiario"
-                                    style={[cardStyle.loginInput, { position: 'relative', paddingVertical: 5, paddingLeft: 20}]}
+                                    type="decimal-pad"
+                                    style={[cardStyle.loginInput, { position: 'relative', paddingVertical: 10, paddingLeft: 20, backgroundColor: '#ccc', borderRadius: 10 }]}
                                 />
                             :
                                 <ComboBox
@@ -138,12 +137,12 @@ export const DashBoard = ({navigation}:PropsStack) => {
                             control={control}
                             name="cantidad"
                             type="decimal-pad"
-                            style={[cardStyle.loginInput, { position: 'relative', paddingVertical: 5, paddingLeft: 20 }]}
+                            style={[cardStyle.loginInput, { position: 'relative', paddingVertical: 10, paddingLeft: 20, backgroundColor: '#ccc', borderRadius: 10 }]}
                         />
                     </View>
 
                     <TouchableOpacity
-                        style={[cardStyle.buttonLogin, { marginTop: 40 }]}
+                        style={[cardStyle.buttonLogin, { backgroundColor: '#DA0073', borderRadius: 50, marginVertical: 20 }]}
                         onPress={handleSubmit(onSubmit)}
                     >
                         <Text style={cardStyle.textButtonLogin}>Ingresar</Text>
